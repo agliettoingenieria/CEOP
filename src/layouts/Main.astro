@@ -1,0 +1,36 @@
+---
+import ShortCard from "../components/ShortCard.astro";
+---
+
+<main>
+	<div class="card-container">
+		<ShortCard title="¿Que es CEOP?">
+			Medicion en el tablero de la maquina analizando todos los parametros de
+			calidad de energia que afectan a este proceso (cuelgan el proceso,
+			desgastan prematuramente los componentes electronicos y causan la
+			quemadura de componentes)
+		</ShortCard>
+	</div>
+	<div class="image-container">
+		<img src="/public/base imagenes-02.png" alt="dd" />
+	</div>
+</main>
+
+<style>
+	main {
+		position: relative;
+		margin-top: 0.3rem;
+		width: 100%;
+		height: 600px;
+	}
+
+	.card-container {
+		position: absolute;
+		left: 9%;
+		top: 100px;
+	}
+	.image-container {
+		width: 100%;
+		height: 100%;
+	}
+</style>

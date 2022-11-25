@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Main from "../layouts/Main.astro";
+import LongCard from "../components/LongCard.astro";
+import Section from "../layouts/Section.astro";
+import HowWeImplementIt from "../components/HowWeImplementIt.astro";
+import Sponsors from "../components/Sponsors.astro";
+---
+
+<Layout title="CEOP">
+	<div class="title">CALIDAD DE ENERGIA ORIENTADA A PROCESOS.</div>
+	<NavBar />
+	<Main />
+	<Section bgColor={"blue"}>
+		<LongCard title="¿Donde se realiza?">
+			La medicion se realiza en el tablero de la maquina a proteger en donde
+			medimos detalladamente todos los parametros de calidad de energia
+		</LongCard>
+	</Section>
+	<Section>
+		<HowWeImplementIt />
+	</Section>
+	<Section>
+		<Sponsors />
+	</Section>
+</Layout>
+<style>
+	.title {
+		background-color: #3f5ee7;
+		color: #ffffff;
+		text-align: center;
+		padding: 0.3rem;
+	}
+</style>

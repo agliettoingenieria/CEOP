@@ -1,0 +1,29 @@
+---
+export interface Props {
+	isImage?: boolean;
+	anchor: {
+		ref: string;
+	};
+}
+
+const { isImage, anchor } = Astro.props as Props;
+---
+
+<li>
+	{
+		(
+			<a class:list={[{ "has-img": isImage }]} href={anchor.ref}>
+				<slot />
+			</a>
+		)
+	}
+</li>
+
+<style>
+	li:has(a.has-img) {
+		height: 100%;
+	}
+	a:not(.has-img):hover {
+		color: red;
+	}
+</style>
