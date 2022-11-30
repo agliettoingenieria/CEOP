@@ -1,36 +1,40 @@
----
-import ShortCard from "../components/ShortCard.astro";
----
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style is:global>
+			html,
+			*,
+			*::before,
+			*::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-<main>
-	<div class="card-container">
-		<ShortCard title="¿Que es CEOP?">
-			Medicion en el tablero de la maquina analizando todos los parametros de
-			calidad de energia que afectan a este proceso (cuelgan el proceso,
-			desgastan prematuramente los componentes electronicos y causan la
-			quemadura de componentes)
-		</ShortCard>
-	</div>
-	<div class="image-container">
-		<img src="../../public/base imagenes-02.png" alt="Hero image" />
-	</div>
-</main>
+			body {
+				width: 100%;
+				min-height: 100vh;
+				color: #000000;
+			}
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
 
-<style>
-	main {
-		position: relative;
-		margin-top: 0.3rem;
-		width: 100%;
-		height: 600px;
-	}
-
-	.card-container {
-		position: absolute;
-		left: 9%;
-		top: 100px;
-	}
-	.image-container {
-		width: 100%;
-		height: 100%;
-	}
-</style>
+			ul {
+				list-style: none;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		</style>
+	</body>
+</html>
