@@ -9,27 +9,22 @@ import Sponsors from "../components/Sponsors.astro";
 ---
 
 <Layout title="CEOP">
-	<div class="title">CALIDAD DE ENERGIA ORIENTADA A PROCESOS.</div>
 	<NavBar />
 	<Main />
-	<Section bgColor={"blue"}>
+	<Section
+		spanText="SOLICITA TU MEDICION AQUI"
+		sectionName="preguntas-frecuentes"
+		bgColor={"blue"}
+	>
 		<LongCard title="¿Donde se realiza?">
 			La medicion se realiza en el tablero de la maquina a proteger en donde
 			medimos detalladamente todos los parametros de calidad de energia
 		</LongCard>
 	</Section>
-	<Section>
+	<Section spanText="SOLICITA TU MEDICION AQUI">
 		<HowWeImplementIt />
 	</Section>
-	<Section>
+	<Section bgColor={"blue"} spanText="ASESORAMIENTO GRATUITO DE UN EXPERTO">
 		<Sponsors />
 	</Section>
 </Layout>
-<style>
-	.title {
-		background-color: #3f5ee7;
-		color: #ffffff;
-		text-align: center;
-		padding: 0.3rem;
-	}
-</style>

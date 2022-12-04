@@ -1,0 +1,41 @@
+---
+import { Color } from "../types/Color";
+import DownArrow from "./DownArrow.astro";
+export interface Props {
+	fill: Color;
+	text: string;
+}
+const { fill, text } = Astro.props as Props;
+---
+
+<div class="click-here-container">
+	<a href="#">
+		<span class="arrow">
+			<DownArrow fill={fill} />
+		</span>
+		<div class="text">{text}</div>
+	</a>
+</div>
+
+<style>
+	.click-here-container {
+		position: relative;
+		width: 100%;
+		width: 80vmin;
+		max-width: 600px;
+	}
+	span {
+		position: absolute;
+		top: -55%;
+		left: 45%;
+	}
+	.text {
+		color: #ffffff;
+		text-align: center;
+		font-size: 1.3rem;
+		font-weight: 500;
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		background-color: #ff0000;
+	}
+</style>

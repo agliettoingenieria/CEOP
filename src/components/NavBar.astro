@@ -1,0 +1,163 @@
+<script>
+	let IS_OPEN = false;
+	const nav = document.querySelector("nav");
+	const items = document.querySelectorAll(".list-container__list .list-item a");
+	const toggleMenuBtn = document.getElementById(
+		"toggle-menu"
+	) as HTMLButtonElement;
+	const responsiveNav = document.querySelector(".list-items__list-container");
+	console.log(items);
+	items.forEach((e) => {
+		e.addEventListener("click", () => {
+			nav.classList.toggle("open");
+			IS_OPEN = !IS_OPEN;
+			console.log(IS_OPEN);
+			toggleMenuBtn.textContent = IS_OPEN ? "X" : "Menu";
+			responsiveNav.classList.toggle("is-open");
+		});
+	});
+	toggleMenuBtn.addEventListener("click", function () {
+		nav.classList.toggle("open");
+		IS_OPEN = !IS_OPEN;
+		console.log(IS_OPEN);
+		this.textContent = IS_OPEN ? "X" : "Menu";
+		responsiveNav.classList.toggle("is-open");
+	});
+</script>
+
+<nav>
+	<ul class="nav__list">
+		<li class="list-item logo-container">
+			<a href="/">
+				<img src="/CEOP logo/logo.jfif" alt="CEOP Logo" />
+			</a>
+		</li>
+		<li class="list-item list-items">
+			<div class="list-items__list-container">
+				<ul class="list-item list-container__list">
+					<li class="list-item"><a class="has-hover" href="/#ceop">CEOP</a></li>
+					<li class="list-item">
+						<a class="has-hover" href="/#preguntas-frecuentes"
+							>PREGUNTAS FRECUENTES</a
+						>
+					</li>
+					<li class="list-item">
+						<a class="has-hover" href="/soluciones">SOLUCIONES</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="list-item social">
+			<a href="#"
+				><img
+					src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30PrGfR3xhB.png"
+					alt="Instagram"
+				/>
+			</a>
+		</li>
+		<li class="list-item">
+			<button id="toggle-menu">Menu</button>
+		</li>
+	</ul>
+</nav>
+
+<style>
+	nav {
+		height: 100px;
+		background-color: #c0bfbf;
+		padding-inline: 4rem;
+		padding-block: 1rem;
+	}
+	.list-item {
+		display: flex;
+		align-self: flex-end;
+	}
+
+	.nav__list {
+		display: grid;
+		grid-template-columns: 100px 1fr 75px;
+		gap: 2rem;
+		justify-items: center;
+		height: 100%;
+	}
+	.logo-container {
+		justify-self: flex-end;
+	}
+
+	.list-item:has(> .list-container__list) {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.list-container__list {
+		display: flex;
+		align-items: flex-end;
+		gap: 2rem;
+	}
+
+	.social {
+		display: flex;
+		width: 35px;
+		height: 35px;
+		align-items: flex-end;
+	}
+
+	.has-hover:hover {
+		color: red;
+	}
+
+	#toggle-menu {
+		display: none;
+	}
+
+	@media screen and (max-width: 780px) {
+		.list-item:has(> .list-items__list-container) {
+			display: none;
+		}
+		.list-items__list-container {
+			display: none;
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			right: 0;
+			top: 0;
+			z-index: 10;
+			background-color: #e9dede;
+		}
+		.list-items:has(.is-open) .list-items__list-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.list-items:has(.is-open) {
+			display: inline-block;
+		}
+
+		.is-open > .list-container__list {
+			display: inline-block;
+		}
+
+		.list-container__list {
+			justify-self: initial;
+			align-self: initial;
+		}
+		.list-container__list li {
+			margin-block: 2rem;
+		}
+
+		.list-item:has(#toggle-menu) {
+			justify-self: flex-end;
+		}
+		#toggle-menu {
+			display: flex;
+			padding: 0.3rem;
+			border-radius: 0.3rem;
+		}
+		nav.open #toggle-menu {
+			position: fixed;
+			right: 5%;
+			top: 5%;
+			z-index: 10;
+		}
+	}
+</style>

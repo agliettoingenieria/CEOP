@@ -1,0 +1,47 @@
+<div class="sponsors">
+	<div class="sponsors__content">
+		<h3>REPRESENTANTES EXCLUSIVOS</h3>
+		<p>
+			Cada evento tiene una solución, nosotros te acercamos a los expertos en
+			cada tipo de solución
+		</p>
+	</div>
+	<div>
+		<ul class="sponsors__list">
+			{
+				new Array(5).fill("asddwe").map((val, idx) => (
+					<li>
+						<a href="#">Image {idx + 1}</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
+
+<style>
+	.sponsors {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.sponsors__content {
+		text-align: center;
+	}
+	.sponsors__content h3 {
+		font-size: 2rem;
+	}
+	.sponsors__list {
+		display: flex;
+		max-width: 60vw;
+		overflow-x: auto;
+		gap: 1rem;
+		padding: 2rem;
+	}
+	.sponsors__list li {
+		background: #2c2c2c;
+		padding: 1rem;
+		border-radius: 2rem;
+	}
+</style>
